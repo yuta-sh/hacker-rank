@@ -24,7 +24,7 @@ const SinglyLinkedList = class {
   }
 };
 
-function printSinglyLinkedList(node) {
+printSinglyLinkedList = (node) => {
   while (node != null) {
     process.stdout.write(String(node.data));
 
@@ -35,7 +35,7 @@ function printSinglyLinkedList(node) {
     }
   }
   process.stdout.write("\n");
-}
+};
 
 const linkedList = new SinglyLinkedList();
 linkedList.insertNode(1);
@@ -44,3 +44,8 @@ linkedList.insertNode(2);
 linkedList.insertNode(3);
 
 printSinglyLinkedList(linkedList.head);
+
+// TODO:特定の場所に挿入はメソッドとして拡張しておきたい
+// TODO:特定の値を削除はメソッドとして拡張しておきたい→本当は双方向連結リストとしての拡張が一般的らしいが。→いや、これ外部関数としてならできるが内部メソッドとしては無理か？
+
+// jsでインスタンスの削除ってどうやってやるんだ？

@@ -1,0 +1,13 @@
+// ハフマンコードは下の感じ
+// while (s !== "") {
+//   num = pop();
+//   if (num === "0") {
+//     node = node.left;
+//   } else {
+//     node = node.right;
+//   }
+//   if (node.hasChar) {
+//     write(node.char);
+//     node = rootNode;
+//   }
+// }
