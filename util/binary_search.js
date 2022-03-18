@@ -21,29 +21,30 @@ const binarySearch = (value) => {
 
 console.log(binarySearch(3), binarySearch(11));
 
-// 拡張したbinary_search（あるソートされた値に対して、true,false条件で分割されるような条件Pがあるときに、その最小のtrueを返す）
+// 拡張したbinary_search（あるソートされた値に対して、true,false条件で分割されるような条件isOkがあるときに、その最小のtrueを返す）
 
 const wideBinarySearch = (value) => {
-  const P = (index) => {
+  const isOk = (index) => {
     //   left端がfalseで、right端がtrueになるようにする。やりたいことによって変える。
     return value <= array[index];
   };
 
-  let left = 0;
-  let right = array.length - 1;
+  let ng = 0;
+  let ok = array.length - 1;
 
   //   true条件のものが存在しない場合は-1。
-  if (!P(right)) return -1;
+  if (!isOk(ok)) return -1;
 
-  while (right - left > 1) {
-    let mid = left + Math.floor((right - left) / 2);
-    if (P(mid)) {
-      right = mid;
+  while (ok - ng > 1) {
+    // 平均をとる
+    let mid = Math.floor((ng + ok) / 2);
+    if (isOk(mid)) {
+      ok = mid;
     } else {
-      left = mid;
+      ng = mid;
     }
   }
-  return right;
+  return ok;
 };
 
-console.log(wideBinarySearch(3), wideBinarySearch(11));
+console.log(wideBinarySearch(3), wideBinarySearch(9), wideBinarySearch(11));
