@@ -24,7 +24,7 @@ const SinglyLinkedList = class {
   }
 };
 
-printSinglyLinkedList = (node) => {
+const printSinglyLinkedList = (node) => {
   while (node != null) {
     process.stdout.write(String(node.data));
 
